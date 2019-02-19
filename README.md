@@ -7,6 +7,7 @@ Currently, the tools built include:
 * [shellcheck](https://github.com/koalaman/shellcheck)
 * [yaml2json](https://github.com/bronze1man/yaml2json)
 * [modd](https://github.com/cortesi/modd)
+* [jq 1.6](https://stedolan.github.io/jq/)
 
 To use them in a docker image build, you can do something like this:
 
