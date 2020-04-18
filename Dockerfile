@@ -8,7 +8,8 @@ RUN wget https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 -O /
 RUN chmod +x /go/bin/jq
 RUN build() { \
         cd /go/src && \
-        git clone -q ${2+-b "$2"} --depth=1 https://github.com/"$1" github.com/"${3-$1}" && \
+        git -c advice.detachedHead=false \
+            clone -q ${2+-b "$2"} --depth=1 https://github.com/"$1" github.com/"${3-$1}" && \
         go get -ldflags="-s -w" github.com/"${3-$1}${4+/$4}"; \
     } \
     && build adnanh/webhook 2.6.11 \
