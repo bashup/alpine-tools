@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+
+build() {
+    local project=$1 branch=$2 alias=${3:-$1} target=$4
+    local srcdir="github.com/$alias" root=/go/src
+    local basepath=$srcdir
+
+    if [[ "$GO11MODULE" == "on" ]]; then
+        root=/
+        srcdir=$alias
+        basepath=.
+    fi
+
+    cd "$root" &&
+        git -c advice.detachedHead=false clone -q ${branch:+-b "$branch"} --depth=1 \
+            https://github.com/"$project" "$srcdir" &&
+    cd "$srcdir" &&
+        go get -ldflags="-s -w" "$basepath${target:+/$target}"
+}
+
+build "$@"
