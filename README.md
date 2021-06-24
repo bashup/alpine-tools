@@ -8,7 +8,7 @@ Currently, the tools built include:
 * [yaml2json](https://github.com/bronze1man/yaml2json)
 * [modd](https://github.com/cortesi/modd) (v0.8, patched to use a 300ms debounce rate)
 * [jq 1.6](https://stedolan.github.io/jq/)
-* [adnanh/webhook](https://github.com/adnanh/webhook) 2.16
+* [adnanh/webhook](https://github.com/adnanh/webhook) 2.8.0
 
 To use them in a docker image build, you can do something like this:
 
