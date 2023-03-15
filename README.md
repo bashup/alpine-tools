@@ -13,7 +13,7 @@ Currently, the tools built include:
 To use them in a docker image build, you can do something like this:
 
 ```dockerfile
-FROM bashitup/alpine-tools:latest as alpine-tools
+FROM ghcr.io/bashup/alpine-tools:latest as alpine-tools
 
 FROM whatever/thing   # whatever your actual base image is
 COPY --from=alpine-tools /bin/* /usr/bin/
